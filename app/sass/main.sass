@@ -1,0 +1,198 @@
+*
+    padding: 0
+    margin: 0
+    font-family: sans-serif
+
+body
+    background: #333
+
+main
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    h2
+        text-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px
+
+    .problem
+        color: whitesmoke
+        font-weight: 800
+        font-size: 4rem
+
+    @keyframes showError
+        50%
+            color: red
+            transform: scale(1.2)
+        100%
+            color: whitesmoke
+            transform: scale(1)
+
+    @keyframes showPoint
+        50%
+            color: limegreen
+            transform: scale(1.1)
+
+        100%
+            color: whitesmoke
+            transform: scale(1)
+
+    .animate-wrong
+        animation: .20s showError
+
+    .animate-point
+        animation: .20s showPoint
+
+    .main-form
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+        .input-box
+            background: white
+            border: 2px solid hotpink
+            display: flex
+            //background-color: coral
+            height: 40px
+            border-radius: 50px
+            overflow: hidden
+
+            input
+                border: none
+                outline: none
+                border-radius: 0
+                padding-left: 20px
+
+            button
+                border: none
+                outline: none
+                padding: 5px 10px
+                min-width: 80px
+                font-weight: 700
+                border-radius: 0
+                cursor: pointer
+                color: white
+                background: hotpink
+
+                &:hover
+                    opacity: 80%
+                    color: pink
+
+    .points-box
+        width: auto
+        ul
+            color: whitesmoke
+            margin-top: 2rem
+            width: 300px
+            display: flex
+            align-items: center
+            justify-content: space-evenly
+            //background-color: pink
+
+            li
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                row-gap: 20px
+
+                p
+                    font-weight: 700
+
+    .footer
+        background: white
+        position: absolute
+        left: 0
+        bottom: 90px
+
+        height: 20px
+        width: 100px
+
+        padding: 1rem 2rem
+        border-radius: 0 10px 10px 0
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+        ul
+            li
+                display: block
+                margin-bottom: 5px
+
+                a
+                    text-decoration: none
+                    font-weight: 700
+                    color: blue
+                    display: block
+                    height: 24spx
+                    color: #333
+                    font-size: 20px
+                    border-bottom: 2px solid transparent
+
+                    &:hover
+                        border-bottom: 2px solid #333
+
+.modal-overlay
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(34, 34, 34, 0.5)
+    display: flex
+    justify-content: center
+    align-items: center
+
+    opacity: 0
+    visibility: hidden
+    transition: all .5 ease-out
+    transform: scale(1.2)
+
+    .modal
+        background: white
+        border-radius: 5px
+        padding: 2rem
+        min-width: 200px
+        min-height: 100px
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        row-gap: 1rem
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+
+        p
+            font-size: 26px
+
+        button
+            border: none
+            outline: none
+            padding: 10px 20px
+            min-width: 80px
+            font-weight: 700
+            border-radius: 5px
+            cursor: pointer
+            color: white
+            background: hotpink
+
+            &:hover
+                opacity: 80%
+                color: pink
+
+.active-overlay
+    .modal-overlay
+        opacity: 100%
+        visibility: visible
+        transform: scale(1)
+
+.active-overlay
+    main
+        filter: blur(5px)
+
+// media query
+@media screen and ( min-width: 768px )
+    main
+        //max-width: 1000px
+        margin: 0 auto
+
+        .problem
+            font-size: 8rem
+
+    .points-box
+        p
+            font-size: 18px

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./app/css/main.css">
+    <script src="./app/js/main.js" defer></script>
+
+    <title>OperationsGame</title>
+</head>
+<body>    
+    <main>
+        <h2 class="problem"></h2>
+        <form action="" class="main-form">
+            <div class="input-box">
+                <input type="text" class="field">
+                <button>Try!</button>
+            </div>
+        </form>
+        <div class="points-box">
+            <ul>
+                <li>
+                    <p>Total Points</p>
+                    <p class="points">0</p>
+                </li>
+                <li>
+                    <p>Strikes Left</p>
+                    <p class="strikes">3</p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul>
+                <!-- <li><a href="#">How to play?</a></li> -->
+                <li><a href="#">Source <i class="fab fa-github-alt"></i></a></li>
+            </ul>
+        </div>
+    </main>
+    <div class="modal-overlay">
+        <div class="modal">
+            <p class='modal-text'>You Won, your score was</p>
+            <button class='reset-btn'>Try Again</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: #333;
+}
+
+main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main h2 {
+  text-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+main .problem {
+  color: whitesmoke;
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+@-webkit-keyframes showError {
+  50% {
+    color: red;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    color: whitesmoke;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes showError {
+  50% {
+    color: red;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    color: whitesmoke;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes showPoint {
+  50% {
+    color: limegreen;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    color: whitesmoke;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes showPoint {
+  50% {
+    color: limegreen;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    color: whitesmoke;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+main .animate-wrong {
+  -webkit-animation: .20s showError;
+          animation: .20s showError;
+}
+
+main .animate-point {
+  -webkit-animation: .20s showPoint;
+          animation: .20s showPoint;
+}
+
+main .main-form {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+main .main-form .input-box {
+  background: white;
+  border: 2px solid hotpink;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+main .main-form .input-box input {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  padding-left: 20px;
+}
+
+main .main-form .input-box button {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  min-width: 80px;
+  font-weight: 700;
+  border-radius: 0;
+  cursor: pointer;
+  color: white;
+  background: hotpink;
+}
+
+main .main-form .input-box button:hover {
+  opacity: 80%;
+  color: pink;
+}
+
+main .points-box {
+  width: auto;
+}
+
+main .points-box ul {
+  color: whitesmoke;
+  margin-top: 2rem;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main .points-box ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 20px;
+}
+
+main .points-box ul li p {
+  font-weight: 700;
+}
+
+main .footer {
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: 90px;
+  height: 20px;
+  width: 100px;
+  padding: 1rem 2rem;
+  border-radius: 0 10px 10px 0;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+main .footer ul li {
+  display: block;
+  margin-bottom: 5px;
+}
+
+main .footer ul li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: blue;
+  display: block;
+  height: 24spx;
+  color: #333;
+  font-size: 20px;
+  border-bottom: 2px solid transparent;
+}
+
+main .footer ul li a:hover {
+  border-bottom: 2px solid #333;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 34, 34, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .5 ease-out;
+  transition: all .5 ease-out;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.modal-overlay .modal {
+  background: white;
+  border-radius: 5px;
+  padding: 2rem;
+  min-width: 200px;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.modal-overlay .modal p {
+  font-size: 26px;
+}
+
+.modal-overlay .modal button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  min-width: 80px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background: hotpink;
+}
+
+.modal-overlay .modal button:hover {
+  opacity: 80%;
+  color: pink;
+}
+
+.active-overlay .modal-overlay {
+  opacity: 100%;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.active-overlay main {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 0 auto;
+  }
+  main .problem {
+    font-size: 8rem;
+  }
+  .points-box p {
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
