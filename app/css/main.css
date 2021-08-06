@@ -8,6 +8,43 @@ body {
   background: #333;
 }
 
+.timer-box {
+  width: 100%;
+  position: absolute;
+  top: -10px;
+}
+
+@-webkit-keyframes bar-anim {
+  50% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: red;
+    width: 0%;
+  }
+}
+
+@keyframes bar-anim {
+  50% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: red;
+    width: 0%;
+  }
+}
+
+.timer-box .progress-bar .bar {
+  width: 50%;
+  height: 14px;
+  background-color: lightgreen;
+}
+
+.timer-box .progress-bar .animate {
+  -webkit-animation: 10s bar-anim;
+          animation: 10s bar-anim;
+}
+
 main {
   height: 100vh;
   display: -webkit-box;

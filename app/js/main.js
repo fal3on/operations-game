@@ -8,6 +8,22 @@ const strikesLeft = document.querySelector('.strikes')
 const modalText = document.querySelector('.modal-text')
 const resetBtn = document.querySelector('.reset-btn')
 
+// timer
+const barAnimation = document.querySelector('.animate')
+const barWidth = document.querySelector('.bar')
+
+let timeState = {
+    tickRes: 1000,
+    timeLenght: 10,
+}
+
+function timerBar(){
+    let progressBar = timeState.tickRes * barWidth.style.width / timeState.timeLenght
+
+}
+
+timerBar()
+
 function generateNumber(max){
     return Math.floor(Math.random() * (max + 1))
 }
@@ -50,6 +66,9 @@ function handleSubmit(event){
         state.score++
         totalPoints.textContent = state.score
         updateProblem()
+
+        
+
         // point animation
         problemElement.classList.add('animate-point')
         setTimeout(() => {
@@ -60,6 +79,8 @@ function handleSubmit(event){
         state.strikes++
         strikesLeft.textContent = 3 - state.strikes
         mainField.select()
+
+        
 
         // error animation
         problemElement.classList.add('animate-wrong')

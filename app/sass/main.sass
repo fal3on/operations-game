@@ -6,6 +6,27 @@
 body
     background: #333
 
+.timer-box
+    width: 100%
+    position: absolute
+    top: -10px
+    .progress-bar
+
+        @keyframes bar-anim
+            50%
+                background-color: yellow
+            100%
+                background-color: red
+                width: 0%
+        .bar
+            width: 50%
+            height: 14px
+            background-color: lightgreen
+            //transition: all .5 ease-out
+
+        .animate
+            animation: 10s bar-anim
+
 main
     height: 100vh
     display: flex
