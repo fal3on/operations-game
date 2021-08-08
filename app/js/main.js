@@ -8,21 +8,7 @@ const strikesLeft = document.querySelector('.strikes')
 const modalText = document.querySelector('.modal-text')
 const resetBtn = document.querySelector('.reset-btn')
 
-// timer
-const barAnimation = document.querySelector('.animate')
-const barWidth = document.querySelector('.bar')
 
-let timeState = {
-    tickRes: 1000,
-    timeLenght: 10,
-}
-
-function timerBar(){
-    let progressBar = timeState.tickRes * barWidth.style.width / timeState.timeLenght
-
-}
-
-timerBar()
 
 function generateNumber(max){
     return Math.floor(Math.random() * (max + 1))
@@ -53,7 +39,7 @@ updateProblem()
 
 mainForm.addEventListener('submit', handleSubmit)
 function handleSubmit(event){
-    event.preventDefault()
+    event.preventDefault()    
 
     let correctAnswer
     const problem = state.currentProblem
@@ -67,6 +53,7 @@ function handleSubmit(event){
         totalPoints.textContent = state.score
         updateProblem()
 
+        time++
         
 
         // point animation
@@ -92,6 +79,7 @@ function handleSubmit(event){
 }
 
 function checkLogic(){
+    
 
     if(state.score === 10){
         modalText.textContent = `You Won, your score was ${state.score}`
@@ -107,6 +95,9 @@ function checkLogic(){
         setTimeout(() => resetBtn.focus(), 500)
         //resetGame()
     }
+
+    
+
 }
 
 resetBtn.addEventListener('click', resetGame)
@@ -119,4 +110,73 @@ function resetGame(){
     state.strikes = 0
     totalPoints.textContent = 0
     strikesLeft.textContent = 3
+    closeCurrentRound()
+    countDown()
 }
+
+
+
+// timer
+const barWidth = document.querySelector('.bar')
+
+const playTime = 10
+let time
+let interval
+
+function countDown(){
+    time = playTime
+    interval = setInterval(() => {
+
+        //console.log(time)
+
+        if(time > 0 && time <= 10){
+            decreaseTimeBar()
+            time--
+        } else {
+            state.strikes++
+            strikesLeft.textContent = 3 - state.strikes
+            closeCurrentRound()
+            setTimeout(() => {
+                countDown()
+            }, 1000)
+        }
+    }, 1000)
+}
+
+function decreaseTimeBar(){
+    const percent = 100 / playTime
+    const actual = percent * time - percent
+    
+    //console.log(actual)
+
+    barWidth.style.width = actual + '%'
+    if(time == 5){
+        barWidth.style.opacity = '0.25'
+        barWidth.style.background = 'yellow'
+    } else if (time == 4){
+        barWidth.style.opacity = '1'
+        barWidth.style.background = 'orange'
+    } else if (time == 3){
+        barWidth.style.opacity = '0.25'
+        barWidth.style.background = 'red'
+    } else if (time == 2){
+        barWidth.style.opacity = '1'
+    } else if (time == 1){
+        barWidth.style.opacity = '0.25'
+    }
+}
+
+function fillTimeBar(){
+    barWidth.style.width = '100%'
+    barWidth.style.opacity = '1'
+    barWidth.style.background = 'lightgreen'
+}
+
+function closeCurrentRound(){
+    clearInterval(interval)
+    fillTimeBar()
+}
+
+countDown();
+
+// end timer
